@@ -1,5 +1,6 @@
 //A express server, which will handle api requests coming in and reponde back with a json object, it will use body parser as well as cors
 
+require('dotenv').config();
 const OpenAI = require('openai');
 const { Configuration, OpenAIApi } = OpenAI;
 
@@ -11,7 +12,7 @@ const port = 3000;
 
 const configuration = new Configuration({
     organization: "org-5ApOj8L4XTSdXVpK7BJsLBkV",
-    apiKey: "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",
+    apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
